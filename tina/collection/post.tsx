@@ -81,15 +81,15 @@ const Post: Collection = {
     },
     {
       type: 'object',
-      label: 'Tags',
-      name: 'tags',
+      label: 'Categories',
+      name: 'categories',
       list: true,
       fields: [
         {
           type: 'reference',
-          label: 'Tag',
-          name: 'tag',
-          collections: ['tag'],
+          label: 'Category',
+          name: 'category',
+          collections: ['category'],
           ui: {
             optionComponent: (
               props: {
@@ -102,7 +102,7 @@ const Post: Collection = {
       ],
       ui: {
         itemProps: (item) => {
-          return { label: item?.tag };
+          return { label: item?.category };
         },
       },
     },

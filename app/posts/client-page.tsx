@@ -30,7 +30,7 @@ export default function PostsClientPage(props: ClientPostProps) {
       id: post.id,
       published: formattedDate,
       title: post.title,
-      tags: post.tags?.map((tag) => tag?.tag?.name) || [],
+      categories: post.categories?.map((cat) => cat?.category?.name) || [],
       url: `/posts/${post._sys.breadcrumbs.join('/')}`,
       excerpt: post.excerpt,
       heroImg: post.heroImg,
@@ -64,7 +64,7 @@ export default function PostsClientPage(props: ClientPostProps) {
                   <div className="sm:col-span-5">
                     <div className="mb-4 md:mb-6">
                       <div className="flex flex-wrap gap-3 text-xs uppercase tracking-wider text-muted-foreground md:gap-5 lg:gap-6">
-                        {post.tags?.map((tag) => <span key={tag}>{tag}</span>)}
+                        {post.categories?.map((category) => <span key={category}>{category}</span>)}
                       </div>
                     </div>
                     <h3 className="text-xl font-semibold md:text-2xl lg:text-3xl">

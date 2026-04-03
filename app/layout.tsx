@@ -1,3 +1,19 @@
+/**
+ * Shim for Node.js 25+ where localStorage exists as a global but is an empty object,
+ * causing libraries that check for its existence to fail when calling getItem/setItem.
+ */
+if (typeof window === 'undefined' && typeof localStorage !== 'undefined' && !localStorage.getItem) {
+  // @ts-ignore
+  global.localStorage = {
+    getItem: () => null,
+    setItem: () => {},
+    removeItem: () => {},
+    clear: () => {},
+    length: 0,
+    key: () => null,
+  };
+}
+
 import React from "react";
 import { Metadata } from "next";
 import { Inter as FontSans, Lato, Nunito } from "next/font/google";

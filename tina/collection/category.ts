@@ -1,9 +1,9 @@
 import type { Collection } from "tinacms";
 
-const Tag: Collection = {
-  label: "Tags",
-  name: "tag",
-  path: "content/tags",
+const Category: Collection = {
+  label: "Categories",
+  name: "category",
+  path: "content/categories",
   format: "mdx",
   fields: [
     {
@@ -16,4 +16,4 @@ const Tag: Collection = {
   ],
 };
 
-export default Tag;
+export default Category;
