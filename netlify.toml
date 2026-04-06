@@ -6,3 +6,4 @@
   NODE_OPTIONS = "--max-old-space-size=4096"
   NEXT_TELEMETRY_DISABLED = "1"
   SECRETS_SCAN_OMIT_KEYS = "TINA_TOKEN"
+  SECRETS_SCAN_OMIT_PATHS = ".netlify/edge-functions/vendor/*"
